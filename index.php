@@ -6,20 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Title -->
       <title>Halim | Onepage Multipurpose Website</title>
-      <!-- Font Google -->
-      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-      <!-- Bootstrap Css -->
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Font Awesome Css -->
-      <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-      <!-- Magnific Popup Css -->
-      <link href="assets/css/magnific-popup.css" rel="stylesheet">
-      <!-- Owl Carousel Css -->
-      <link href="assets/css/owl.carousel.css" rel="stylesheet">
-      <!-- Main Css -->
-      <link href="assets/css/style.css" rel="stylesheet">
-      <!-- Responsive Css -->
-      <link href="assets/css/responsive.css" rel="stylesheet">
+      <?php wp_head(); ?>
    </head>
    <body>
 	   <section class="header-top">
@@ -607,26 +594,6 @@
       </div>
    </div>
 </footer>
-<!-- Footer Area End -->
-<!-- Main JS -->
-<script src="assets/js/jquery.min.js"></script>
-<!-- Popper JS -->
-<script src="assets/js/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- Owl Carousel JS -->
-<script src="assets/js/owl.carousel.min.js"></script>
-<!-- Manific Popup JS -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<!-- Isotope JS -->
-<script src="assets/js/isotope.min.js"></script>
-<!-- Imageload JS -->
-<script src="assets/js/imageloaded.min.js"></script>
-<!-- Counter JS -->
-<script src="assets/js/jquery.counterup.min.js"></script>
-<!-- Waypoint JS -->
-<script src="assets/js/waypoint.min.js"></script>
-<!-- Main JS -->
-<script src="assets/js/main.js"></script>
+<?php wp_footer(); ?>
 </body>
 </html>
