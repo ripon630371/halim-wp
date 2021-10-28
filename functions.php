@@ -1,4 +1,16 @@
 <?php
+
+function halim_setup(){
+    add_theme_support('title-tag');
+    load_theme_textdomain('halim', get_template_directory() . '/languages');
+    register_nav_menus(array(
+        'primary-menu' => __('Primary Menu', 'halim'),
+    ));
+
+}
+
+add_action('after_setup_theme','halim_setup');
+
 function halim_assets() {
     
     wp_enqueue_style( 'font-poppins', '//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', array(), '1.0.0', 'all' );
