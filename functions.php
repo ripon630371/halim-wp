@@ -2,12 +2,33 @@
 
 function halim_setup(){
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails',array('sliders'));
     load_theme_textdomain('halim', get_template_directory() . '/languages');
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halim'),
     ));
 
 }
+
+//custom post
+
+function halim_custom_posts(){
+    //slider custom post 
+    register_post_type('sliders',array(
+
+        'labels' => array(
+            'name' => __('Sliders', 'halim'),
+            'singular_name' => __('Slider', 'halim')
+        ),
+        'public' => true,
+        'show_ui' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'show_in_rest' => true
+    ));
+}
+
+add_action('init', 'halim_custom_posts');
+
 
 add_action('after_setup_theme','halim_setup');
 

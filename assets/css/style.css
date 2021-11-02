@@ -360,8 +360,16 @@ a.box-btn:hover i.fa {
 #navbarNav a {
 	font-weight: 500;
 	padding: 0px 12px;
-	color: #fff
+	color: #fff;
+	transition: .3s;
 }
+.menu-main-menu-container ul li a{
+	transition: .3s;
+}
+.menu-main-menu-container ul li a:hover{
+	color: #635CDB !important;
+}
+
 .header {
 	padding: 10px 0;
 	-webkit-transition: .3s;
@@ -1715,3 +1723,5 @@ a.box-btn:hover i.fa {
 	border: 1px solid #ddd;
 	padding: 3px;
   }
+
+  
