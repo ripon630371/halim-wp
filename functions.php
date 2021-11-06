@@ -2,7 +2,7 @@
 
 function halim_setup(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails',array('sliders'));
+    add_theme_support('post-thumbnails',array('sliders','services'));
     load_theme_textdomain('halim', get_template_directory() . '/languages');
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halim'),
@@ -25,6 +25,20 @@ function halim_custom_posts(){
         'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
         'show_in_rest' => true
     ));
+
+     // Services Custom Post
+     register_post_type('services', array(
+        'labels' => array(
+            'name' => __('Services', 'halim'),
+            'singular_name' => __('Service', 'halim')
+        ),
+        'public' => true,
+        'show_ui' => true,
+        'supports' => array('title', 'editor', 'custom-fields'),
+        'show_in_rest' => true
+    ));
+
+
 }
 
 add_action('init', 'halim_custom_posts');
