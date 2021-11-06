@@ -24,10 +24,18 @@ get_header();?>
                      <div class="col-xl-12">
                         <div class="slide-table">
                            <div class="slide-tablecell">
-                              <h4>We Are Advanced Batch 11</h4>
+
+                              <?php
+                                 if(class_exists('ACF')) {
+                                    $sub_title = get_field('slider_subtitle');
+                                    $btn_url = get_field('silder_button_url');
+                                    $btn_text = get_field('silder_button_text');
+                                 }
+                              ?>
+                              <h4><?php echo $sub_title;?></h4>
                               <h2><?php the_title(); ?></h2>
                               <?php the_content(); ?>
-                              <a href="#" class="box-btn">our projects <i class="fa fa-angle-double-right"></i></a>
+                              <a href="<?php echo esc_url($btn_url);?>" class="box-btn"><?php echo $btn_text;?><i class="fa fa-angle-double-right"></i></a>
                            </div>
                         </div>
                      </div>
