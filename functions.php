@@ -2,7 +2,7 @@
 
 function halim_setup(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails',array('sliders','services','counters'));
+    add_theme_support('post-thumbnails',array('sliders','services','counters','teams'));
     load_theme_textdomain('halim', get_template_directory() . '/languages');
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halim'),
@@ -47,6 +47,17 @@ function halim_custom_posts(){
         'public' => true,
         'show_ui' => true,
         'supports' => array('title','custom-fields'),
+    ));
+
+    // Counter Custom Post
+      register_post_type('teams', array(
+        'labels' => array(
+            'name' => __('Teams', 'halim'),
+            'singular_name' => __('Team', 'halim')
+        ),
+        'public' => true,
+        'show_ui' => true,
+        'supports' => array('title','thumbnail','custom-fields'),
     ));
 
 
