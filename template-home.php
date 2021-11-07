@@ -220,26 +220,28 @@ get_header();?>
       <section class="counter-area">
          <div class="container-fluid">
             <div class="row">
+            <?php
+               $args = array(
+                  'post_type' => 'counters',
+                  'posts_per_page' => 4,
+                  'order'			=> 'ASC'
+               );
+               $query = new WP_Query($args);
+               while( $query -> have_posts() ) {
+                  $query -> the_post();
+            ?>
                <div class="col-md-3">
                   <div class="single-counter">
-                     <h4><i class="fa fa-user"></i><span class="counter">567</span>customers</span></h4>
+                     <h4><i class="<?php if(class_exists('ACF')) {
+                        the_field('conter_icon');
+                     } ?>"></i><span class="counter"><?php the_field('counter_number'); ?></span><?php the_title(); ?></span></h4>
                   </div>
                </div>
-               <div class="col-md-3">
-                  <div class="single-counter">
-                     <h4><i class="fa fa-code"></i><span class="counter">236</span>line of codes</h4>
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="single-counter">
-                     <h4><i class="fa fa-file"></i><span class="counter">789</span>users</h4>
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="single-counter">
-                     <h4><i class="fa fa-coffee"></i><span class="counter">1,395</span>cup of coffees</h4>
-                  </div>
-               </div>
+            <?php
+               }
+               wp_reset_postdata();
+            ?>
+               
             </div>
          </div>
       </section>

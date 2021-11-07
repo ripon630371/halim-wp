@@ -2,7 +2,7 @@
 
 function halim_setup(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails',array('sliders','services'));
+    add_theme_support('post-thumbnails',array('sliders','services','counters'));
     load_theme_textdomain('halim', get_template_directory() . '/languages');
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halim'),
@@ -36,6 +36,17 @@ function halim_custom_posts(){
         'show_ui' => true,
         'supports' => array('title', 'editor', 'custom-fields'),
         'show_in_rest' => true
+    ));
+
+      // Counter Custom Post
+      register_post_type('counters', array(
+        'labels' => array(
+            'name' => __('Counter', 'halim'),
+            'singular_name' => __('Counter', 'halim')
+        ),
+        'public' => true,
+        'show_ui' => true,
+        'supports' => array('title','custom-fields'),
     ));
 
 
