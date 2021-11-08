@@ -2,7 +2,7 @@
 
 function halim_setup(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails',array('sliders','services','counters','teams'));
+    add_theme_support('post-thumbnails',array('sliders','services','counters','teams','testimonial'));
     load_theme_textdomain('halim', get_template_directory() . '/languages');
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halim'),
@@ -58,6 +58,16 @@ function halim_custom_posts(){
         'public' => true,
         'show_ui' => true,
         'supports' => array('title','thumbnail','custom-fields'),
+    ));
+    // Testimonials Custom Post
+    register_post_type('testimonials', array(
+        'labels' => array(
+            'name' => __('Testimonials', 'halim'),
+            'singular_name' => __('Testimonial', 'halim')
+        ),
+        'public' => true,
+        'show_ui' => true,
+        'supports' => array('title', 'thumbnail', 'custom-fields'),
     ));
 
 
